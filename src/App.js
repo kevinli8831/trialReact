@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from "./Components/NavBar";
+import CheckOut from "./Components/CheckOut";
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         </a>
 
       </header>
+        <CheckOut/>
     </div>
   );
 }
