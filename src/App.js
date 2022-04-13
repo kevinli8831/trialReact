@@ -1,13 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import NavBar from "./Components/NavBar";
 import CheckOut from "./Components/CheckOut";
+import Rating from "./Components/Rating";
 function App() {
   return (
     <div className="App">
-      <NavBar>
+      <Rating
+        style={{ backgroundColor: "lightblue" }}
+        onDoubleClick={() => {
+          alert("double click");
+        }}
+      />
+      <NavBar></NavBar>
 
-      </NavBar>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,9 +27,8 @@ function App() {
         >
           Learn React
         </a>
-
       </header>
-        <CheckOut/>
+      <CheckOut />
     </div>
   );
 }
