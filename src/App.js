@@ -1,35 +1,41 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
+import colorData from "./data/color-data.json";
 import "./App.css";
-import NavBar from "./Components/NavBar";
-import CheckOut from "./Components/CheckOut";
-import Rating from "./Components/Rating";
+import { v4 } from "uuid";
+import ColorList from "./Components/ColorList";
+import AddColorForm from "./Components/AddColorForm";
 function App() {
+  const [colors, setColors] = useState(colorData);
   return (
-    <div className="App">
-      <Rating
-        style={{ backgroundColor: "lightblue" }}
-        onDoubleClick={() => {
-          alert("double click");
+    <>
+      <AddColorForm
+        onNewColor={(title, color) => {
+          const newColors = [
+            ...colors,
+            {
+              id: v4(),
+              rating: 0,
+              title,
+              color,
+            },
+          ];
+          setColors(newColors);
         }}
       />
-      <NavBar></NavBar>
-
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save a
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <CheckOut />
-    </div>
+      <ColorList
+        colors={colors}
+        onRemoveColor={(id) => {
+          const newColors = colors.filter((color) => color.id !== id);
+          setColors(newColors);
+        }}
+        onRateColor={(id, rating) => {
+          const newColors = colors.map((color) =>
+            color.id === id ? { ...color, rating } : color
+          );
+          setColors(newColors);
+        }}
+      />
+    </>
   );
 }
 
