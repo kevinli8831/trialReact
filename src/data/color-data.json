@@ -1,16 +1,16 @@
 [
   {
-    "id": "color1",
+    "id": "15d385d4-4f35-4990-b6f8-7108f425ec52",
     "title": "ocean at dusk",
     "color": "#00c4e2",
     "rating": 5
   }, {
-    "id": "color2",
+    "id": "7b119ab7-6c18-40b1-bbaa-e324d18c6db4",
     "title": "lawn",
     "color": "#26ac56",
     "rating":3
   },{
-    "id": "color3",
+    "id": "7cc782a2-a69c-44d2-9a73-f1d1503536ef",
     "title": "bright red",
     "color": "#ff0000",
     "rating":0

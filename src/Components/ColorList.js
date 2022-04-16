@@ -12,6 +12,7 @@ export default function ColorList({
     <div>
       {colors.map((color) => (
         <Color
+          className="my-10"
           key={color.id}
           {...color}
           onRemove={onRemoveColor}
