@@ -8,7 +8,7 @@ const Star = ({ selected = false, onSelect = (f) => f }) => (
   />
 );
 const createArray = (length) => [...Array(length)];
-
+console.log(createArray(5), "createArray");
 export default function Rating({
   style = {},
   totalStars = 5,
